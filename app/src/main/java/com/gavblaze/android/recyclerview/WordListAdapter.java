@@ -43,6 +43,12 @@ public class WordListAdapter extends RecyclerView.Adapter<WordListAdapter.ViewHo
         return mLinkedList.size();
     }
 
+    public void swapData(LinkedList<String> newList) {
+        mLinkedList = newList;
+        notifyDataSetChanged();
+
+    }
+
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         TextView mWordTextView;

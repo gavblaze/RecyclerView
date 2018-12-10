@@ -10,9 +10,6 @@
     <TextView
         tools:text="New Word"
         android:id="@+id/word_list_item"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        style="@style/word_title"/>
 
 </LinearLayout>

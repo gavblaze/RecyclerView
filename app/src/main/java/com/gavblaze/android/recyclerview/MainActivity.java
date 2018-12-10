@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity implements WordListAdapter.O
     private final LinkedList<String> mWordList = new LinkedList<>();
     private WordListAdapter mWordListAdapter;
     private RecyclerView mRecyclerView;
-    
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,11 +34,7 @@ public class MainActivity extends AppCompatActivity implements WordListAdapter.O
 
         mRecyclerView.setLayoutManager(mLayoutManager);
 
-
-        for (int i = 0; i <= 20; i++) {
-            mWordList.add("Word " + i);
-        }
-
+        populateList();
 
 
         FloatingActionButton fab = findViewById(R.id.fab);
@@ -69,7 +65,10 @@ public class MainActivity extends AppCompatActivity implements WordListAdapter.O
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_reset) {
+            mWordList.clear();
+            populateList();
+            mWordListAdapter.notifyDataSetChanged();
             return true;
         }
 
@@ -81,5 +80,11 @@ public class MainActivity extends AppCompatActivity implements WordListAdapter.O
         String wordOfClicked = mWordList.get(position);
         mWordList.set(position, "Clicked! " + wordOfClicked);
         mWordListAdapter.notifyDataSetChanged();
+    }
+
+    public void populateList() {
+        for (int i = 0; i <= 20; i++) {
+            mWordList.add("Word " + i);
+        }
     }
 }
