@@ -1,4 +1,4 @@
-package com.gavblaze.android.recyclerview;
+package com.gavblaze.android.recyclerviewespresso;
 
 import org.junit.Test;
 

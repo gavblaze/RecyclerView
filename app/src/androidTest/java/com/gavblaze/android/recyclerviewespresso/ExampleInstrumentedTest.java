@@ -1,4 +1,4 @@
-package com.gavblaze.android.recyclerview;
+package com.gavblaze.android.recyclerviewespresso;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

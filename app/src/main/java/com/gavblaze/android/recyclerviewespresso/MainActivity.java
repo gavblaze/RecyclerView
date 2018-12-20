@@ -1,4 +1,4 @@
-package com.gavblaze.android.recyclerview;
+package com.gavblaze.android.recyclerviewespresso;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -69,6 +69,7 @@ public class MainActivity extends AppCompatActivity implements WordListAdapter.O
             mWordList.clear();
             populateList();
             mWordListAdapter.notifyDataSetChanged();
+            mRecyclerView.smoothScrollToPosition(0);
             return true;
         }
 

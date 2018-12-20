@@ -1,4 +1,4 @@
-package com.gavblaze.android.recyclerview;
+package com.gavblaze.android.recyclerviewespresso;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -14,7 +14,7 @@ public class WordListAdapter extends RecyclerView.Adapter<WordListAdapter.ViewHo
     private OnItemClickListener mOnItemClickListener;
 
 
-    public WordListAdapter(LinkedList<String> list, OnItemClickListener listener) {
+    WordListAdapter(LinkedList<String> list, OnItemClickListener listener) {
         this.mOnItemClickListener = listener;
 
         this.mLinkedList = list;
@@ -46,7 +46,6 @@ public class WordListAdapter extends RecyclerView.Adapter<WordListAdapter.ViewHo
     public void swapData(LinkedList<String> newList) {
         mLinkedList = newList;
         notifyDataSetChanged();
-
     }
 
 
@@ -61,7 +60,7 @@ public class WordListAdapter extends RecyclerView.Adapter<WordListAdapter.ViewHo
 
         @Override
         public void onClick(View view) {
-            int positon = getLayoutPosition();
+            int positon = getAdapterPosition();
             mOnItemClickListener.onItemClick(positon);
 
         }
